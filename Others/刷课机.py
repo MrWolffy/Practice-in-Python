@@ -1,3 +1,13 @@
+# 低配版刷课机
+# by 尹晨桥
+# 创建于2.23
+
+# 日志
+# 2.23
+# 实现最基本的刷课功能
+#   指定课程循环刷新
+#   某一门课选课成功后结束程序
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -22,8 +32,8 @@ wait = WebDriverWait(browser, 10)
 def get_info():
     global stu_id, password, target_course, count_target_course, count_use_times
     # 获取学号和密码
-    stu_id = input("请输入你的学号")
-    password = input("请输入你的密码")
+    stu_id = input("请输入你的学号：")
+    password = input("请输入你的密码：")
 
     # elective页面
     browser.get('http://elective.pku.edu.cn')
@@ -84,7 +94,7 @@ def get_info():
         target_course[i] = int(target_course[i])
 
     # 填写验证码
-    input("请在chrome中填写验证码，按回车继续")
+    input("请在Chrome中填写验证码，按回车继续")
 
 
 def main():
